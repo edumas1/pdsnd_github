@@ -6,8 +6,7 @@ March 10, 2021
 Bikeshare.py
 
 ### Description
-Describe what your project is about and what it does
-
+This project shares the data from bycicle rental from three different cities
 ### Files used
 Include the files used
 

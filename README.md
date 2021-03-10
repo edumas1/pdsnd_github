@@ -10,4 +10,4 @@ This project shares the data from bycicle rental from three different cities
 ### Files used
 The files used were the excel from chicago, washington and new york
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+There were not any additional information used

@@ -4,9 +4,9 @@ import numpy as np
 import calendar
 from datetime import datetime
 
-CITY_DATA = { 'chicago': '/Users/EdgardoDumas/Desktop/udacigyy/chicago.csv',
-              'new york city': '/Users/EdgardoDumas/Desktop/udacigyy/new_york_city.csv',
-              'washington': '/Users/EdgardoDumas/Desktop/udacigyy/washington.csv' }
+CITY_DATA = { 'chicago': '/Users/EdgardoDumas/Desktop/udacity/Bikeshare-Project/chicago.csv',
+              'new york city': '/Users/EdgardoDumas/Desktop/udacity/Bikeshare-Project/new_york_city.csv',
+              'washington': '/Users/EdgardoDumas/Desktop/udacity/Bikeshare-Project/washington.csv' }
 
 city_choice = ['chicago', 'new york city', 'washington']
 month_choice = ['All', 'January', 'February', 'March', 'April', 'May', 'June']
@@ -121,7 +121,7 @@ def station_stats(df):
 
     # TO DO: display most frequent combination of start station and end station trip
     most_frequent_combination = df.groupby(['Start Station', 'End Station']).size().idxmax()
-    print("The most frequent combination is: {}, {}".format(most_frequent_combination[0], most_frequent_combination[1]))
+    print("The most frequent combination is: " + most_frequent_combination[0] + most_frequent_combination[1])
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)

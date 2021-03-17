@@ -4,13 +4,13 @@ import numpy as np
 import calendar
 from datetime import datetime
 
-CITY_DATA = { 'chicago': '/Users/EdgardoDumas/Desktop/udacigyy/chicago.csv',
-              'new york city': '/Users/EdgardoDumas/Desktop/udacigyy/new_york_city.csv',
-              'washington': '/Users/EdgardoDumas/Desktop/udacigyy/washington.csv' }
+CITY_DATA = { 'chicago': '/Users/EdgardoDumas/Desktop/udacity/Bikeshare-Project/chicago.csv',
+              'new york city': '/Users/EdgardoDumas/Desktop/udacity/Bikeshare-Project/new_york_city.csv',
+              'washington': '/Users/EdgardoDumas/Desktop/udacity/Bikeshare-Project/washington.csv' }
 
-city_choice = ['chicago', 'new york city', 'washington']
-month_choice = ['All', 'January', 'February', 'March', 'April', 'May', 'June']
-day_choice = ['All', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+cityChoice = ['chicago', 'new york city', 'washington']
+monthChoice = ['All', 'January', 'February', 'March', 'April', 'May', 'June']
+dayChoice = ['All', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
 
 def get_filters():
@@ -27,25 +27,25 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = input("\nWould you like data from Chicago, New York City or Washington? ").lower()
-        if city not in city_choice:
+        if city not in cityChoice:
             print("Not an appropiate response")
-        elif city in city_choice:
+        elif city in cityChoice:
             break
 
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
         month = input("From which month would you like data from? ")
-        if month not in month_choice:
+        if month not in monthChoice:
             print("Not an appropiate response")
-        elif month in month_choice:
+        elif month in monthChoice:
             break
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
         day = input("From which day would you like data from? ")
-        if day not in day_choice:
+        if day not in dayChoice:
             print("Not an appropiate response")
-        elif day in day_choice:
+        elif day in dayChoice:
             break
 
     print('-'*40)
@@ -73,7 +73,7 @@ def load_data(city, month, day):
     df['Hour'] = df['Start Time'].dt.hour
 
     if month != 'All':
-        month = month_choice.index(month)
+        month = monthChoice.index(month)
         df = df[df['Month'] == month]
 
     if day!= 'All':

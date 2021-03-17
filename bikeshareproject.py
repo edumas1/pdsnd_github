@@ -8,9 +8,9 @@ CITY_DATA = { 'chicago': '/Users/EdgardoDumas/Desktop/udacity/Bikeshare-Project/
               'new york city': '/Users/EdgardoDumas/Desktop/udacity/Bikeshare-Project/new_york_city.csv',
               'washington': '/Users/EdgardoDumas/Desktop/udacity/Bikeshare-Project/washington.csv' }
 
-cityChoice = ['chicago', 'new york city', 'washington']
-monthChoice = ['All', 'January', 'February', 'March', 'April', 'May', 'June']
-dayChoice = ['All', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+city_choice = ['chicago', 'new york city', 'washington']
+month_choice = ['All', 'January', 'February', 'March', 'April', 'May', 'June']
+day_choice = ['All', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
 
 def get_filters():
@@ -27,25 +27,25 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = input("\nWould you like data from Chicago, New York City or Washington? ").lower()
-        if city not in cityChoice:
+        if city not in city_choice:
             print("Not an appropiate response")
-        elif city in cityChoice:
+        elif city in city_choice:
             break
 
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
         month = input("From which month would you like data from? ")
-        if month not in monthChoice:
+        if month not in month_choice:
             print("Not an appropiate response")
-        elif month in monthChoice:
+        elif month in month_choice:
             break
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
         day = input("From which day would you like data from? ")
-        if day not in dayChoice:
+        if day not in day_choice:
             print("Not an appropiate response")
-        elif day in dayChoice:
+        elif day in day_choice:
             break
 
     print('-'*40)
@@ -73,7 +73,7 @@ def load_data(city, month, day):
     df['Hour'] = df['Start Time'].dt.hour
 
     if month != 'All':
-        month = monthChoice.index(month)
+        month = month_choice.index(month)
         df = df[df['Month'] == month]
 
     if day!= 'All':
